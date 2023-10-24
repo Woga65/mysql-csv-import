@@ -1,0 +1,26 @@
+"address";"firstname";"lastname";"date_of_birth";"cust_nb";"country";"email";"phone";"languages";"comment"
+"Herr";"Albrecht";"Baumgartl";"2001-01-01";1;"Deutschland";"ab@myfancymail.de";"1111111111";"Deutsch,Englisch";"comment 1"
+"Frau";"Aline";"Köhler";"2002-02-01";2;"Deutschland";"ak@myfancymail.de";"2222222222";"Deutsch,Französisch";
+"Frau";"Antje";"Pönitz";"2003-03-01";3;"Deutschland";"ap@myfancymail.de";"3333333333";;
+"Frau";"Daniela";"Steinberg";"2004-04-01";4;"Deutschland";"ds@myfancymail.de";"4444444444";"Deutsch";
+"Frau";"Diana";"Wagner";"2005-05-01";5;"Deutschland";"dw@myfancymail.de";"5555555555";"Deutsch";
+"Herr";"Jörg";"Arnold";;;;"ja@myfancymail.de";;
+"Herr";"Jan";"Uhlig";;;;"ju@myfancymail.de";;
+"Frau";"Julia";"Jeschek";;;;"jj@myfancymail.de";;
+"Herr";"Mando";"Mentzner";;;;"mme@myfancymail.de";;
+"Herr";"Marcel";"Fritzsche";;;;"mf@myfancymail.de";;
+"Herr";"Marcus";"Lenzner";;;;"ml@myfancymail.de";;
+"Herr";"Markus";"Göckeritz";;;;"mg@myfancymail.de";;
+"Herr";"Markus";"Haubold";;;;"mh@myfancymail.de";;
+"Herr";"Matthias";"Böttcher";;;;"mb@myfancymail.de";;
+"Frau";"Nadin";"Schrör";;;;"ns@myfancymail.de";;
+"Herr";"René";"Uhlig";;;;"ru@myfancymail.de";;
+"Herr";"Robert";"Schlesiger";;;;"rs@myfancymail.de";;
+"Frau";"Sabrina";"Hermann";;;;"sh@myfancymail.de";;
+"Frau";"Sandra";"Kuhn";"1920-01-20";"20";"Schweiz";"sk@myfancymail.de";"2020202020";"Deutsch";"comment 20"
+"Herr";"Sascha";"Döll";"1921-01-21";"21";;"sd@myfancymail.de";"2121212121";"Deutsch,Englisch";
+"Frau";"Sindy";"Bamberg";;;;"sb@myfancymail.de";;
+"Herr";"Stefan";"Lorse";;;;"sl@myfancymail.de";;
+"Frau";"Susann";"Ludwig";;;;"s.ludwig@myfancymail.de";;
+"Herr";"Thorsten";"Ulrich";;;;"tu@myfancymail.de";;
+"Herr";"Torsten";"Gneuß";;;;"tg@myfancymail.de";;

@@ -1,0 +1,16 @@
+'E-Mail','Anrede','Vorname','Nachname','Geburtstag','Kundennummer','Land','Telefon','Sprachen','Kommentar'
+'ab@myfancymail.de','Herr','Albrecht','Baumgartl','11.11.2011',1,'Deutschland','1111111111','Englisch,Deutsch','Kommentar 11'
+'ak@myfancymail.de','Frau','Aline','Koehler','01.02.2002',2,'Deutschland','2222222222','Deutsch,Französisch','Kommentar 22'
+'ap@myfancymail.de','Frau','Antje','Poenitz','01.03.2003',3,'Deutschland','3333333333','Deutsch','Kommentar 33'
+'ds@myfancymail.de','Frau','Daniela','Steinberg','01.04.2004',4,'Schweiz','4444444444','Englisch',
+'dw@myfancymail.de','Frau','Diana','Wagner','01.05.2005',5,'Österreich','5555555555','Deutsch,Englisch',
+'ja@myfancymail.de','Herr','Jörg','Arnold','01.06.2006','6','Österreich','6666666666','Deutsch,Englisch',
+'ju@myfancymail.de','Herr','Jan','Uhlig','01.07.2007','7','Österreich','7777777777','Deutsch,Englisch','Kommentar 7'
+'jj@myfancymail.de','Frau','Julia','Jeschek',,'8',,,'Deutsch,Russisch','Kommentar 8'
+'mme@myfancymail.de','Herr','Mando','Mentzner',,'9',,,'Englisch,Deutsch',
+'mf@myfancymail.de','Herr','Marcel','Fritzsche',,,,,
+'ml@myfancymail.de','Herr','Marcus','Lenzner',,,,,
+'mg@myfancymail.de','Herr','Markus','Göckeritz',,,,,
+'mh@myfancymail.de','Herr','Markus','Haubold',,,,,
+'mb@myfancymail.de','Herr','Matthias','Böttcher',,,,,
+'ns@myfancymail.de','Frau','Nadin','Schrör',,,,,

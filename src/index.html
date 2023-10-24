@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySql CSV import</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/global-styles.css">
+    <link rel="stylesheet" href="css/import-csv.css">
+    <script type="module" src="js/import-csv.js"></script>
+</head>
+<body id="main" class="main fade-in" tabindex=0 >
+
+    <header class="main base-margin fade-in-out">
+        <h2 class="title-message" id="title-message">
+            MySql CSV data import.
+        </h2>
+        <p class="subtitle-message" id="subtitle-message"></p>
+    </header>
+    
+    <section id="csv-import" class="csv-import">
+        <div class="csv-import-container base-margin top-margin bottom-margin">
+
+
+            <div class="form-container container fade-in-out" id="csv-container">
+                <form class="form csv-form" id="csv-form" method="post">
+
+                    <div class="inline">
+        
+                        <div class="field-container grow">
+                            <div>
+                                <label for="inputfile">Input file</label>
+                            </div>
+                            <div>
+                                <input id="inputfile" class="form-field"
+                                    type="text"
+                                    name="inputfile"
+                                    required
+                                    placeholder="CSV file name...">
+                                <div class="hint">
+                                    File name is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-container">
+                            <div>
+                                <label for="separator">Separator</label>
+                            </div>
+                            <div>
+                                <input id="separator" class="form-field"
+                                    type="text"
+                                    name="separator"
+                                    required
+                                    minlength="1"
+                                    maxlength="2"
+                                    placeholder="Separator...">
+                                <div class="hint">
+                                    Separator is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-container">
+                            <div>
+                                <label for="enclosure">Enclosure</label>
+                            </div>
+                            <div>
+                                <input id="enclosure" class="form-field"
+                                    type="text"
+                                    name="enclosure"
+                                    required
+                                    minlength="1"
+                                    maxlength="2"
+                                    placeholder="Enclosure...">
+                                <div class="hint">
+                                    Enclosure is required
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="inline">
+
+                        <div class="field-container">
+                            <div>
+                                <input id="umlaut" class="form-field checkbox"
+                                    type="checkbox"
+                                    name="umlaut"
+                                    value="yes">
+                                <label for="umlaut">ae/oe/ue to umlaut</label>
+                                <div class="hint"></div>
+                            </div>
+                        </div>
+       
+                        <div class="field-container">
+                            <div>
+                                <input id="date" class="form-field checkbox"
+                                    type="checkbox"
+                                    name="date"
+                                    value="yes">
+                                <label for="date">date to yyyy-mm-dd</label>
+                                <div class="hint"></div>
+                            </div>
+                        </div>
+
+                        <div class="field-container">
+                            <div>
+                                <input id="inchunks" class="form-field checkbox"
+                                    type="checkbox"
+                                    name="inchunks"
+                                    value="yes">
+                                <label for="inchunks">in chunks</label>
+                                <div class="hint"></div>
+                            </div>
+                        </div>
+
+                        <div class="field-container">
+                            <div class="inline nowrap rtl">
+                                <input id="chunksize" class="form-field"
+                                    type="number"
+                                    min="0"
+                                    max="1500"
+                                    name="chunksize"
+                                    placeholder="chunk size..."
+                                    value="250">
+                                <label for="chunksize">chunk size</label>
+                                <div class="hint"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div id="assignments" class="assignments"></div>
+
+
+                    <div class="field-container confirmation" id="confirmation">
+                        <div>
+                            <label for="start">Confirm import</label>
+                        </div>
+                        <div>
+                            <input id="start" class="form-field"
+                                type="text"
+                                name="start"
+                                minlength="1"
+                                maxlength="3"
+                                placeholder="type YES to start import ... ">
+                            <div class="hint"></div>
+                        </div>
+                    </div>
+
+                    <div class="submit-container container">
+                        <button type="button" id="aux-button" class="non-submit-button auxiliary-button">Auxiliary Function</button>
+                        <button type="submit" name="csv-submit" id="csv-submit" class="submit-button">
+                            <span class="progress-bar"></span><span class="button-text">Get CSV Structure</span>
+                        </button>
+                    </div>
+                    
+                </form>
+                <div class="form-link-container">
+                    <span>Need help?</span>
+                    <button type="button" id="link-button" class="link-style-button">
+                        View documentation here
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
