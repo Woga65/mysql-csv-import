@@ -18,6 +18,10 @@
   background-color: var(--primary-bgr);
 }
 
+.main .subtitle-message {
+  margin-bottom: calc(var(--font-size) * 1.0);
+}
+
 .fade-in {
   opacity: 0;
   transition: opacity 250ms ease-in-out 250ms;
@@ -111,6 +115,10 @@
   text-align: left;
   color: var(--primary-color);
   margin-top: calc(var(--font-size) * 1);
+}
+
+.subtitle-message span {
+  color: var(--secondary-accent);
 }
 
 .csv-import {
