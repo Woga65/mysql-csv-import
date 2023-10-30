@@ -12,6 +12,9 @@ class Autoloader {
                 case('JsonHttp'):
                     $fileName = 'json-http';
                     break;
+                case('ListDirectory'):
+                    $fileName = 'list-directory';
+                    break;
                 default:
                     $fileName = strtolower($className);
             }

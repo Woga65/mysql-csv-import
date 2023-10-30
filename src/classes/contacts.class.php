@@ -54,7 +54,7 @@ class Contacts extends Dbh {
             ->connect()
             ->prepare($sql);
 
-        if (!$stmt->execute($values)) {
+        if ($values === [] || !$stmt->execute($values)) {
             $stmt = null;
             echo JsonHttp::errResp("stmtfailed: Check exists");
             exit();
@@ -88,11 +88,19 @@ class Contacts extends Dbh {
         }
 
         $sql = substr($sql, 0, -2) . ' WHERE id = ' . $id . ';'; 
-        $stmt = $this->connect()->prepare($sql);
 
-        if ($values === [] || !$stmt->execute($values)) {
+        try {
+            $stmt = $this
+                ->connect()
+                ->prepare($sql);
+
+            $stmt->execute($values);
+        }
+        catch (PDOException $e) {
             $stmt = null;
-            echo JsonHttp::errResp("stmtfailed: Update row");
+            echo JsonHttp::errResp( "stmtfailed - Update row: " . $e->getMessage() . 
+                                    " in file " . $e->getFile() .
+                                    " at line " . $e->getLine() );
             exit();
         }
 
@@ -114,11 +122,19 @@ class Contacts extends Dbh {
         }
 
         $sql = substr($sqlHead, 0, -2) . substr($sqlTail, 0, -2) . ');';
-        $stmt = $this->connect()->prepare($sql);
 
-        if ($values === [] || !$stmt->execute($values)) {
+        try {
+            $stmt = $this
+                ->connect()
+                ->prepare($sql);
+
+            $stmt->execute($values);
+        }
+        catch (PDOException $e) {
             $stmt = null;
-            echo JsonHttp::errResp("stmtfailed: Insert row");
+            echo JsonHttp::errResp( "stmtfailed - Insert row: " . $e->getMessage() . 
+                                    " in file " . $e->getFile() .
+                                    " at line " . $e->getLine() );
             exit();
         }
 

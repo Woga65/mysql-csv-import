@@ -1,6 +1,7 @@
 /* backend end points */
 const endPoints = {
     importCsv: 'includes/import-csv.inc.php',
+    getCsvFiles: 'includes/get-csv-files.inc.php',
 }
 
 /* the forms array */
@@ -15,6 +16,7 @@ const forms = [
         defaultValues: ['', ';', '"', '', '', '', '250', ''],
         formChange: csvFormChanged,
         dataSent: csvSuccess,
+        errorResponseCallback: csvError,
     },
 ];
 
@@ -31,6 +33,7 @@ init();
 
 /* initialize the form submitter(s) */
 async function init() {
+    getCsvFileNames();
     initUserInterface();        // generic initialization
     addCheckboxListener();      // disable chunkSize input if inChunks is not checked
 }
@@ -114,6 +117,7 @@ function submitListener(form, index, e) {
                 await form.dataSent(index, result, formDataObject);
             } else {
                 reportInvalidFormData(index, result);
+                form.errorResponseCallback(result);
                 console.log('result: ', result);
             }
             form.submit.disabled = false;
@@ -176,6 +180,14 @@ function clearFormData(index) {
 
 
 /* actions to perform after the form
+   endpoint has reported an error */
+function csvError(result) {
+    updateInputFileState();
+    hideFieldAssignments();
+}
+
+
+/* actions to perform after the form
    has been successfully submitted */
 async function csvSuccess(index, result, formData) {
     if ('data' in result && 'source' in result.data && 'target' in result.data) { 
@@ -185,6 +197,7 @@ async function csvSuccess(index, result, formData) {
             await processDataInChunks(result.data.chunkSize, index, result, formData);
         }
         clearFormData(index);
+        updateInputFileState();
         hideFieldAssignments();
     }
 }
@@ -267,13 +280,44 @@ function updateProgressBar(percent) {
 }
 
 
-/* dismiss any field assignments, 
- * if the input file has changed */
+/* dismiss any field assignments,
+ * if the input file has changed. */
 function csvFormChanged(form, index, e) {
     if (['inputfile', 'separator', 'enclosure'].includes(e.target.id)) {
         hideFieldAssignments();
+        updateInputFileState();
         document.getElementById('start').value = '';
     }
+}
+
+
+/* Update the state of the input file options. */
+function updateInputFileState() {
+    const inputFile = document.getElementById('inputfile');
+    inputFile.firstElementChild.hidden = inputFile.value ? false : true;
+    inputFile.firstElementChild.disabled = inputFile.value ? false : true;
+}
+
+
+/* retrieve and render a list of the CSV files
+ * that were uploaded to the data folder */
+async function getCsvFileNames() {
+    return await submitRequest(endPoints.getCsvFiles, {})
+        .then(result => {
+            result.data = result.ok ? result.data : { files: [] }; 
+            renderInputFileOptions(result.data.files);
+        });
+}
+
+
+/* render the input file's option elements */
+function renderInputFileOptions(files) {
+    const inputFile = document.getElementById('inputfile');
+    files.forEach(file => {
+        const option = document.createElement('option');
+        option.value = option.textContent = file.name;
+        inputFile.appendChild(option);
+    });
 }
 
 

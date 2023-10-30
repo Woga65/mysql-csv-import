@@ -30,24 +30,14 @@
 
                     <div class="inline">
         
-                        <div class="field-container grow inputfile">
+                        <div class="field-container grow">
                             <div>
                                 <label for="inputfile">Input file</label>
                             </div>
                             <div>
-                                <input id="inputfile" class="form-field"
-                                    list="inputfiles"
-                                    type="text"
-                                    name="inputfile"
-                                    required
-                                    placeholder="choose CSV file from list...">
-                                <datalist id="inputfiles">
-                                    <option value="data_01">5 rows CSV data, semicolon, double quotes</option>
-                                    <option value="data_02">15 rows CSV data, comma, single quotes</option>
-                                    <option value="data_03">25 rows CSV data, semicolon, double quotes</option>
-                                    <option value="data_1000">1000 rows CSV data, semicolon, double quotes</option>
-                                    <option value="data_50000">50000 rows CSV data, semicolon, double quotes</option>
-                                </datalist>
+                                <select id="inputfile" class="form-field inputfile" name="inputfile" required>
+                                    <option value="" disabled selected hidden>Select CSV file...</option>
+                                </select>
                                 <div class="hint">
                                     File name is required
                                 </div>
