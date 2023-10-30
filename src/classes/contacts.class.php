@@ -94,7 +94,11 @@ class Contacts extends Dbh {
                 ->connect()
                 ->prepare($sql);
 
-            $stmt->execute($values);
+            if ($values === [] || !$stmt->execute($values)) {
+                $stmt = null;
+                echo JsonHttp::errResp("stmtfailed: Update row");
+                exit();
+            }
         }
         catch (PDOException $e) {
             $stmt = null;
@@ -128,7 +132,11 @@ class Contacts extends Dbh {
                 ->connect()
                 ->prepare($sql);
 
-            $stmt->execute($values);
+            if ($values === [] || !$stmt->execute($values)) {
+                $stmt = null;
+                echo JsonHttp::errResp("stmtfailed: Insert row");
+                exit();
+            }
         }
         catch (PDOException $e) {
             $stmt = null;
